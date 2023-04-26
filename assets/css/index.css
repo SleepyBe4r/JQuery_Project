@@ -1,0 +1,128 @@
+:root {
+    --ColorB: cyan;
+    --ColorA: cyan;   
+    --randomColor: white;
+}
+
+body {    
+    width: 100vw;
+    height: 100vh;            
+    overflow: hidden;
+}
+  
+body, button{
+    background-color: black;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px var(--randomColor),
+      0 0 82px var(--randomColor),
+      0 0 92px var(--randomColor),
+      0 0 102px var(--randomColor),
+      0 0 151px var(--randomColor) 
+}
+  
+button {
+    border-style: solid;
+    border-width: thin;
+    border-radius: 10%;
+    border-color: #fff;  
+    width: 5vw;
+    height: 5vh;    
+    transition: 0.2s;
+}
+  
+button:hover{
+    background-color: var(--randomColor);  
+}
+
+.circle {
+    position: fixed;
+    top: 50%;        
+    left: 50%;
+    z-index: 0;
+    height: 20vh;
+    width: 20vh;
+    margin-top: -10vh;
+    margin-left: -10vh;
+    background-color: var(--randomColor);
+    border-radius: 50%;
+    border: #fff solid medium;
+    box-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px var(--randomColor),
+        0 0 82px var(--randomColor),
+        0 0 92px var(--randomColor),
+        0 0 102px var(--randomColor),
+        0 0 151px var(--randomColor); 
+    transition: all 1.5s ease;
+}
+
+.line {
+    position: fixed;
+    top: 10%;        
+    left: 50%;
+    z-index: -2;
+    height: 5vh;
+    width: 20vw;
+    margin-left: -10vw;
+    background-color: var(--randomColor);
+    border-radius: 20px;
+    border: #fff solid medium;
+    box-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px var(--randomColor),
+        0 0 82px var(--randomColor),
+        0 0 92px var(--randomColor);       
+        transition: all 1.5s ease;
+}
+
+@keyframes Move-lineB{
+    0%{
+        right: 100%;
+    }
+
+    100%{
+        right: 0%;
+    }
+}
+
+.lineB {
+    position: fixed;
+    top: 0%;        
+    right: 100%;
+    z-index: -1;
+    height: 40vh;
+    width: 80vw;    
+    background-color: rgb(0, 0, 0);    
+    
+    animation: Move-lineB 4s infinite;
+}
+
+@keyframes Move-lineA{
+    0%{
+        right: 0%;
+    }
+
+    100%{
+        right: -100%;
+    }
+}
+
+.lineA {
+    position: fixed;
+    top: 0%;        
+    right: 0%;
+    z-index: -1;
+    height: 40vh;
+    width: 95vw;    
+    background-color: rgb(0, 0, 0);    
+    
+    animation: Move-lineA 4s infinite;
+}
